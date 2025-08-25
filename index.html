@@ -85,12 +85,13 @@
   </div>
 <input type="hidden" name="chatid" id="chatid">
 <script>
-  // Берём chat_id из URL и вставляем в скрытое поле
+document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const chatId = urlParams.get("chatid");
   if (chatId) {
     document.getElementById("chatid").value = chatId;
   }
+});
 </script>
   <script>
     const QUESTIONS = [
