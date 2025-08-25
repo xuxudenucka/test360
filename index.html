@@ -83,7 +83,15 @@
       </section>
     </form>
   </div>
-
+<input type="hidden" name="chat_id" id="chat_id">
+<script>
+  // Берём chat_id из URL и вставляем в скрытое поле
+  const urlParams = new URLSearchParams(window.location.search);
+  const chatId = urlParams.get("chat_id");
+  if (chatId) {
+    document.getElementById("chat_id").value = chatId;
+  }
+</script>
   <script>
     const QUESTIONS = [
       "общительный, открытый","сопереживающий и добросердечный","склонный быть неорганизованным",
@@ -252,5 +260,6 @@ form.addEventListener('submit', async (e) => {
   }
 });
   </script>
+
 </body>
 </html>
