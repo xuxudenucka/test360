@@ -83,13 +83,13 @@
       </section>
     </form>
   </div>
-<input type="hidden" name="chat_id" id="chat_id">
+<input type="hidden" name="chatid" id="chatid">
 <script>
   // Берём chat_id из URL и вставляем в скрытое поле
   const urlParams = new URLSearchParams(window.location.search);
-  const chatId = urlParams.get("chat_id");
+  const chatId = urlParams.get("chatid");
   if (chatId) {
-    document.getElementById("chat_id").value = chatId;
+    document.getElementById("chatid").value = chatId;
   }
 </script>
   <script>
