@@ -86,14 +86,15 @@
   </div>
   <script>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const chatId = urlParams.get("chatid");
-      if (chatId) {
-        document.getElementById("chatid").value = chatId;
-        console.log("Chat ID установлен:", chatId); // Для отладки
-      }
-    });
+function setChatIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const chatId = urlParams.get("chatid");
+  if (chatId) {
+    document.getElementById("chatid").value = chatId;
+    console.log("Chat ID установлен:", chatId);
+  }
+}
+
     const QUESTIONS = [
       "общительный, открытый","сопереживающий и добросердечный","склонный быть неорганизованным",
       "расслабленный, хорошо справляющийся со стрессом","мало интересующийся искусством","напористый",
@@ -215,6 +216,7 @@
 const form = document.getElementById('form');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  setChatIdFromUrl(); 
   const fd = new FormData(form);
   const data = Object.fromEntries(fd.entries());
 
